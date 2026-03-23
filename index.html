@@ -1,0 +1,57 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Geometria & Música</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <canvas id="c" width="600" height="715"></canvas>
+    <div class="controls">
+        <h2>🎶📐 Matemática da música</h2>
+        <label>Forma</label>
+        <select id="shape">
+            <option value="4">Quadrado (4 vértices)</option>
+            <option value="3">Triângulo (3 vértices)</option>
+            <option value="5">Pentágono (5 vértices)</option>
+            <option value="6">Hexágono (6 vértices)</option>
+        </select>
+
+        <label>Tempo (BPM)</label>
+        <input id="bpm" type="range" min="40" max="240" value="120">
+        <div style="margin-top:6px">BPM: <span id="bpmVal">202</span></div>
+
+        <label>Notas nos vértices (escala)</label>
+        <div id="notesInputs">
+            <div style="margin-top: 6px;"><input data-idx="0" style="width: 100%;"></div>
+            <div style="margin-top: 6px;"><input data-idx="1" style="width: 100%;"></div>
+            <div style="margin-top: 6px;"><input data-idx="2" style="width: 100%;"></div>
+            <div style="margin-top: 6px;"><input data-idx="3" style="width: 100%;"></div>
+            <div style="margin-top: 6px;"><input data-idx="4" style="width: 100%;"></div>
+            <div style="margin-top: 6px;"><input data-idx="5" style="width: 100%;"></div>
+        </div>
+
+        <div style="margin-top:12px;">
+            <button id="play">▶️ Tocar</button>
+            <button id="pause">⏸️ Pausar</button>
+            <button id="reset">🔄 Reset</button>
+        </div>
+
+        <div class="info">
+            <div>Vértice atual: <span class="note-badge" id="currentNote">C4</span></div>
+            <div style="margin-top:8px; font-size:0.9em; color:#333">
+                A bolinha percorre as arestas no tempo definido pelo BPM. Quando atinge um vértice toca a nota
+                correspondente.
+                Você pode ajustar a forma, BPM e as notas.
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="vertices.js"></script>
+</body>
+
+</html>
